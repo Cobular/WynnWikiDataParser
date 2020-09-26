@@ -1,0 +1,47 @@
+{
+  "name": "wynn_wiki_data_parser",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Idk yet",
+  "scripts": {
+    "build": "tsc --project .",
+    "check": "npm run format && npm run lint",
+    "format": "prettier --write \"./src/**.ts\" ./package.json",
+    "lint": "eslint ./src",
+    "start": "tsc -p . && node dist/main.js",
+    "test": "npm run build && npm run check"
+  },
+  "dependencies": {
+    "@types/uuid": "^8.3.0",
+    "fast-xml-parser": "^3.17.4",
+    "telegraf": "^3.38.0",
+    "uuid": "^8.3.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node12": "^1.0.7",
+    "@types/node": "^14.10.1",
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
+    "eslint": "^7.8.1",
+    "eslint-config-prettier": "^6.11.0",
+    "prettier": "^2.1.1",
+    "prettier-plugin-package": "^1.0.0",
+    "typescript": "^4.0.2"
+  },
+  "eslint": {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/all",
+      "prettier",
+      "prettier/@typescript-eslint"
+    ]
+  }
+}
